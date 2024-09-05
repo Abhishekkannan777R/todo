@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <h1>Edit Task</h1>
+    <form action="update" method="post">
+        {% csrf_token %}
+        {%for ls in data%}
+        <label>Task name</label>
+        <input type="text" name="idno" value="{{ls.id}}" hidden>
+        <input type="text" name="nm" value="{{ls.taskname}}">
+        <label>Date</label>
+        <input type="date" name="da" value="{{ls.taskdate}}">
+        <input type="submit" value="submit">
+        {% endfor %}
+    </form>
+</body>
+</html>
